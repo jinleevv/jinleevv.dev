@@ -1,13 +1,8 @@
-import { Label } from "../components/ui/label";
-import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
-import { BriefcaseBusiness, Github, School } from "lucide-react";
+import { Label } from "@/components/ui/label";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { BriefcaseBusiness, School } from "lucide-react";
 import { RiLinkedinBoxFill, RiGithubFill } from "react-icons/ri";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "../components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Home() {
   return (
