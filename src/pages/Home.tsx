@@ -10,7 +10,7 @@ export default function Home() {
       <div className="flex flex-col items-center">
         <Avatar className="w-32 h-32">
           <AvatarImage
-            src="/src/assets/profile.jpg"
+            src="/profile.jpg"
             className="w-full h-full object-cover"
           />
           <AvatarFallback>JW</AvatarFallback>
@@ -80,7 +80,7 @@ export default function Home() {
             <div className="flex gap-2">
               <Avatar className="w-10 h-10 rounded-md mt-auto mb-auto">
                 <AvatarImage
-                  src="/src/assets/ultium_cam_logo.jpeg"
+                  src="/ultium_cam_logo.jpeg"
                   className="w-full h-full object-cover"
                 />
                 <AvatarFallback>Ultium CAM</AvatarFallback>
@@ -102,7 +102,7 @@ export default function Home() {
             <div className="flex gap-2">
               <Avatar className="w-10 h-10 rounded-md mt-auto mb-auto">
                 <AvatarImage
-                  src="/src/assets/flojoy_logo.png"
+                  src="/flojoy_logo.png"
                   className="w-full h-full object-cover"
                 />
                 <AvatarFallback>Flojoy</AvatarFallback>
@@ -124,7 +124,7 @@ export default function Home() {
             <div className="flex gap-2">
               <Avatar className="w-10 h-10 rounded-md mt-auto mb-auto">
                 <AvatarImage
-                  src="/src/assets/sdplex_logo.jpeg"
+                  src="/sdplex_logo.jpeg"
                   className="w-full h-full object-cover"
                 />
                 <AvatarFallback>SD Plex</AvatarFallback>
