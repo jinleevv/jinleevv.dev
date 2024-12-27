@@ -1,3 +1,5 @@
+import tailwindcssAnimate from "tailwindcss-animate";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
@@ -7,7 +9,7 @@ export default {
       fontFamily: {
         saira: ["Saira Stencil One", "sans-serif"],
         fredoka: ["Fredoka"],
-        kodchasan: ["Kodchasan"]
+        kodchasan: ["Kodchasan"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -58,5 +60,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 };
