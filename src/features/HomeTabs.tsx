@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { useHook } from "@/hooks";
 
 export default function HomeTabs() {
   const [isMoved, setIsMoved] = useState(false);
+  const { setCurrentTab } = useHook();
 
   const tabs = ["Experience", "Projects"];
 
@@ -58,7 +60,10 @@ export default function HomeTabs() {
             <Button
               variant="outline"
               className="px-4 py-2 w-28 text-sm"
-              onClick={() => setIsMoved(true)}
+              onClick={() => {
+                setIsMoved(true);
+                setCurrentTab(tab.toLowerCase());
+              }}
             >
               {tab}
             </Button>
@@ -81,7 +86,10 @@ export default function HomeTabs() {
             <Button
               variant="outline"
               className="px-4 py-2 w-28 text-sm"
-              onClick={() => setIsMoved(false)}
+              onClick={() => {
+                setIsMoved(false);
+                setCurrentTab("home");
+              }}
             >
               Back
             </Button>

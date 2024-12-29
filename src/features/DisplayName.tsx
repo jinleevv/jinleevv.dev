@@ -1,18 +1,21 @@
 import { motion } from "framer-motion";
+import { useHook } from "@/hooks";
 
 export default function DisplayName() {
+  const { currentTab } = useHook();
   const name = "JINWON LEE";
 
   return (
-    <section className="text-white font-kodchasan font-semibold text-3xl">
+    <section className="text-white font-kodchasan font-semibold text-3xl mt-2">
       {name.split("").map((letter, i) => (
         <motion.span
           key={i}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{
+            opacity: currentTab === "home" ? 1 : 0,
+          }}
           transition={{
-            duration: 0.5,
-            delay: i * 0.1, // Slight delay for a staggered fade-in effect
+            duration: 1.5,
           }}
           style={{ display: "inline-block" }}
         >
