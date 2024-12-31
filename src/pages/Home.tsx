@@ -46,11 +46,19 @@ export default function Home() {
               <School strokeWidth={1.25} size={20} />
               <Label className="m-auto">McGill University</Label>
             </div>
-            <a className="flex gap-1 text-white hover:text-gray-300">
+            <a
+              className="flex gap-1 text-white hover:text-gray-300"
+              href="https://www.linkedin.com/in/jinleevv/"
+              target="_blank"
+            >
               <RiLinkedinBoxFill size={20} />
               <Label className="m-auto">LinkedIn</Label>
             </a>
-            <a className="flex gap-1 text-white hover:text-gray-300">
+            <a
+              className="flex gap-1 text-white hover:text-gray-300"
+              href="https://github.com/jinleevv"
+              target="_blank"
+            >
               <RiGithubFill size={20} />
               <Label className="m-auto">Github</Label>
             </a>

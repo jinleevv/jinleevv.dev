@@ -46,7 +46,7 @@ export default function Experience() {
             className="w-[550px] h-18 rounded-lg p-3 border text-white"
           >
             <div className="flex gap-2">
-              <Avatar className="w-10 h-10 rounded-md mt-auto mb-auto">
+              <Avatar className="w-14 h-14 rounded-md mt-auto mb-auto">
                 <AvatarImage
                   src={experience.logo}
                   className="w-full h-full object-cover"
@@ -62,7 +62,7 @@ export default function Experience() {
                     {experience.duration}
                   </Label>
                 </div>
-                <Label className="mt-auto mb-auto font-light text-sm">
+                <Label className="-mt-3 mb-auto font-light text-sm">
                   {experience.position}
                 </Label>
               </div>

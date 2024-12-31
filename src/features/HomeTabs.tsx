@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useHook } from "@/hooks";
 
 export default function HomeTabs() {
   const [isMoved, setIsMoved] = useState(false);
-  const { setCurrentTab } = useHook();
+  const { currentTab, setCurrentTab } = useHook();
 
   const tabs = ["Experience", "Projects"];
+
+  useEffect(() => {
+    setIsMoved(currentTab !== "home");
+  }, [currentTab]);
 
   const containerVariants = {
     // Initial position of the conatiner
