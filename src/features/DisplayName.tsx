@@ -3,10 +3,10 @@ import { useHook } from "@/hooks";
 
 export default function DisplayName() {
   const { currentTab } = useHook();
-  const name = "JINWON LEE";
+  const name = "JIN WON LEE";
 
   return (
-    <section className="text-white font-kodchasan font-semibold text-3xl mt-2">
+    <section className="font-jost font-semibold text-3xl mt-2">
       {name.split("").map((letter, i) => (
         <motion.span
           key={i}
@@ -25,4 +25,3 @@ export default function DisplayName() {
     </section>
   );
 }
-

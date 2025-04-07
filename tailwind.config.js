@@ -10,6 +10,7 @@ export default {
         saira: ["Saira Stencil One", "sans-serif"],
         fredoka: ["Fredoka"],
         kodchasan: ["Kodchasan"],
+        jost: ["Jost"],
       },
       borderRadius: {
         lg: "var(--radius)",
