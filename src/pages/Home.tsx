@@ -1,9 +1,7 @@
 import { Label } from "@/components/ui/label";
 import { BriefcaseBusiness, School } from "lucide-react";
 import { RiLinkedinBoxFill, RiGithubFill } from "react-icons/ri";
-import Experience from "./Experience";
 import { motion } from "framer-motion";
-import Projects from "./Projects";
 import { Button } from "@/components/ui/button";
 
 const experiences = [
