@@ -19,7 +19,7 @@ const experiences = [
   {
     title: "Flojoy",
     subtitle: "Software Engineer Intern",
-    date: "May 2023 - Dex 2023",
+    date: "May 2023 - Dec 2023",
     icon: (
       <img
         src="/flojoy_logo.png"
@@ -54,15 +54,15 @@ const experiences = [
 export default function Home() {
   return (
     <section className="h-screen w-screen font-jost">
-      <div className="flex w-full mt-2 justify-end gap-2 px-32">
-        <Button variant="ghost" className="bg-white">
-          Projects
-        </Button>
-        <Button variant="ghost" className="bg-white">
-          Blog
-        </Button>
-      </div>
       <div className="w-full h-full flex flex-col justify-center items-center">
+        <div className="flex w-full mb-20 justify-end gap-2 px-44">
+          <Button variant="ghost" className="bg-white">
+            Projects
+          </Button>
+          <Button variant="ghost" className="bg-white">
+            Blog
+          </Button>
+        </div>
         <motion.div initial={{ opacity: 1 }}>
           <div className="w-full flex flex-col items-center justify-center">
             <img src="/jinleevv.png" className="w-64 h-64" />
@@ -122,7 +122,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="flex w-full mt-10 justify-center"
         >
-          <div className="flex gap-8 px-4 md:px-10 py-6 min-w-[600px]">
+          <div className="flex gap-8 px-4 md:px-10 py-6">
             {experiences.map((exp, index) => (
               <div
                 key={index}
