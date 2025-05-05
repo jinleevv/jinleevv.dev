@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 const experiences = [
   {
     title: "SDPlex, Inc",
+    link: "http://www.sdplex.com/html/01_about.html",
     subtitle: "Software Engineer Intern",
     date: "May 2022 - July 2022",
     icon: (
@@ -18,6 +19,7 @@ const experiences = [
   },
   {
     title: "Flojoy",
+    link: "https://www.flojoy.ai/",
     subtitle: "Software Engineer Intern",
     date: "May 2023 - Dec 2023",
     icon: (
@@ -29,6 +31,7 @@ const experiences = [
   },
   {
     title: "Ultium CAM",
+    link: "https://www.ultiumcam.net/eng/main/getMain.do",
     subtitle: "Software Engineer Intern",
     date: "Dec 2023 - Feb 2025",
     icon: (
@@ -40,6 +43,7 @@ const experiences = [
   },
   {
     title: "LG AI Research",
+    link: "https://www.lgresearch.ai/",
     subtitle: "Computer Vision Document Data Engineer Intern",
     date: "Mar 2025 - Present",
     icon: (
@@ -128,9 +132,13 @@ export default function Home() {
                 key={index}
                 className="relative flex flex-col items-center text-center min-w-[200px] group"
               >
-                <div className="z-10 p-3 bg-transparent rounded-full group-hover:scale-110 transition">
+                <a
+                  href={exp.link}
+                  target="_blank"
+                  className="z-10 p-3 bg-transparent rounded-full group-hover:scale-110 transition"
+                >
                   {exp.icon}
-                </div>
+                </a>
                 <div className="mt-2 text-sm font-semibold text-gray-800">
                   {exp.title}
                 </div>
