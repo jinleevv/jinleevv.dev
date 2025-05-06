@@ -3,6 +3,7 @@ import { BriefcaseBusiness, School } from "lucide-react";
 import { RiLinkedinBoxFill, RiGithubFill } from "react-icons/ri";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const experiences = [
   {
@@ -56,11 +57,17 @@ const experiences = [
 ];
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <section className="h-screen w-screen font-jost">
       <div className="w-full h-full flex flex-col justify-center items-center">
         <div className="flex w-full mb-20 justify-end gap-2 px-44">
-          <Button variant="ghost" className="bg-white">
+          <Button
+            variant="ghost"
+            className="bg-white"
+            onClick={() => navigate("/projects")}
+          >
             Projects
           </Button>
           <Button variant="ghost" className="bg-white">
@@ -120,8 +127,8 @@ export default function Home() {
         <div className="mt-10 w-2/3 h-2 border-b-[1px] border-black"></div>
 
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
           className="flex w-full mt-10 justify-center"
@@ -132,13 +139,16 @@ export default function Home() {
                 key={index}
                 className="relative flex flex-col items-center text-center min-w-[200px] group"
               >
-                <a
+                <motion.a
                   href={exp.link}
                   target="_blank"
-                  className="z-10 p-3 bg-transparent rounded-full group-hover:scale-110 transition"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="z-10 -mt-5 bg-transparent rounded-full"
                 >
                   {exp.icon}
-                </a>
+                </motion.a>
                 <div className="mt-2 text-sm font-semibold text-gray-800">
                   {exp.title}
                 </div>
