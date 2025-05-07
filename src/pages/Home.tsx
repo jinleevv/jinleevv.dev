@@ -70,9 +70,9 @@ export default function Home() {
           >
             Projects
           </Button>
-          <Button variant="ghost" className="bg-white">
+          {/* <Button variant="ghost" className="bg-white">
             Blog
-          </Button>
+          </Button> */}
         </div>
         <motion.div initial={{ opacity: 1 }}>
           <div className="w-full flex flex-col items-center justify-center">
