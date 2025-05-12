@@ -34,13 +34,10 @@ export default function Projects() {
           <Button
             variant="ghost"
             className="bg-white"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/blog")}
           >
-            Home
-          </Button>
-          {/* <Button variant="ghost" className="bg-white">
             Blog
-          </Button> */}
+          </Button>
         </div>
       </div>
 
