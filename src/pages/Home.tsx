@@ -4,6 +4,7 @@ import { RiLinkedinBoxFill, RiGithubFill } from "react-icons/ri";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import Footer from "@/features/Footer";
 
 const experiences = [
   {
@@ -128,7 +129,7 @@ export default function Home() {
           </div>
         </motion.div>
 
-        <div className="mt-10 w-2/3 h-2 border-b-[1px] border-black"></div>
+        <div className="mt-10 w-2/3 h-2 border-t"></div>
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -167,6 +168,8 @@ export default function Home() {
             ))}
           </div>
         </motion.div>
+
+        <Footer />
       </div>
     </section>
   );

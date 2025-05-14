@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { BlogPost, getAllPosts } from "@/lib/posts";
 import ReactMarkdown from "react-markdown";
+import { Label } from "@/components/ui/label";
 
 export default function BlogPosts() {
   const { slug } = useParams();
@@ -16,10 +17,14 @@ export default function BlogPosts() {
   if (!post) return <div className="p-10">Loading...</div>;
 
   return (
-    <div className="prose lg:prose-xl max-w-3xl mx-auto py-20 px-4">
-      <h1>{post.title}</h1>
-      <p className="text-gray-400 text-sm">{post.date}</p>
-      <ReactMarkdown>{post.content}</ReactMarkdown>
+    <div className="prose lg:prose-xl max-w-3xl mx-auto py-20 px-4 font-jost">
+      <Label className="text-xs text-muted-foreground">{post.date}</Label>{" "}
+      <br />
+      <Label className="text-2xl font-bold">{post.title}</Label> <br />
+      <Label className="text-sm text-muted-foreground">{post.subtitle}</Label>
+      <div className="py-3">
+        <ReactMarkdown>{post.content}</ReactMarkdown>
+      </div>
     </div>
   );
 }
