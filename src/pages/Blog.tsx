@@ -3,6 +3,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { BlogPost, getAllPosts } from "@/lib/posts";
+import Footer from "@/features/Footer";
 
 export default function Blog() {
   const navigate = useNavigate();
@@ -14,8 +15,8 @@ export default function Blog() {
   }, []);
 
   return (
-    <section className="h-screen w-screen font-jost">
-      <div className="flex w-full py-[72px] px-44">
+    <section className="min-h-screen w-screen flex flex-col font-jost">
+      <div className="flex w-full py-[76px] px-44">
         <div
           className="flex w-full justify-start cursor-pointer"
           onClick={() => navigate("/")}
@@ -32,7 +33,7 @@ export default function Blog() {
           </Button>
         </div>
       </div>
-      <div className="flex flex-col w-full justify-center items-center space-y-3 px-5">
+      <div className="flex-grow flex flex-col w-full justify-start items-center space-y-3 px-5">
         {posts.map((post) => (
           <div
             key={post.slug}
@@ -50,6 +51,7 @@ export default function Blog() {
           </div>
         ))}
       </div>
+      <Footer />
     </section>
   );
 }

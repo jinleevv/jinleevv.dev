@@ -2,7 +2,7 @@ import { RiGithubFill, RiLinkedinBoxFill } from "react-icons/ri";
 
 export default function Footer() {
   return (
-    <div className="flex w-full h-fit justify-center text-xs pt-16">
+    <div className="flex w-full h-fit justify-center text-xs pt-16 pb-2">
       <footer className="flex w-2/3 justify-between border-t pt-4">
         <div className="mb-2 md:mb-0">
           © {new Date().getFullYear()}, Jin Won Lee. All rights reserved.

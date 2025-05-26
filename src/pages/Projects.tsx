@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
+import Footer from "@/features/Footer";
 
 const projects = [
   {
@@ -23,9 +24,9 @@ export default function Projects() {
 
   return (
     <section className="h-screen w-screen font-jost">
-      <div className="flex w-full py-[72px] px-44">
+      <div className="flex w-full py-[76px] px-44">
         <div
-          className="flex w-full justify-start cursor-pointer"
+          className="flex w-full justify-start cursor-pointer my-auto"
           onClick={() => navigate("/")}
         >
           <Label className="cursor-pointer">Jin Won Lee</Label>
@@ -49,7 +50,7 @@ export default function Projects() {
         transition={{
           duration: 0.7,
         }}
-        className="flex flex-col w-full justify-center items-center space-y-3 pb-10"
+        className="flex flex-col w-full justify-center items-center space-y-3"
       >
         {projects.map((project, index) => (
           <div
@@ -90,6 +91,7 @@ export default function Projects() {
           </div>
         ))}
       </motion.div>
+      <Footer />
     </section>
   );
 }

@@ -61,9 +61,9 @@ export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <section className="h-screen w-screen font-jost">
-      <div className="w-full h-full flex flex-col justify-center items-center">
-        <div className="flex w-full mb-20 justify-end gap-2 px-44">
+    <section className="min-h-screen w-screen flex flex-col justify-between font-jost">
+      <div className="flex-grow flex flex-col justify-center items-center space-y-3">
+        <div className="flex w-full h-fit justify-end gap-2 px-44">
           <Button
             variant="ghost"
             className="bg-white"
@@ -118,7 +118,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="grid mt-4 space-y-1">
+          <div className="grid mt-4 space-y-1 mb-4">
             <Label className="text-center max-w-2xl text-sm text-gray-400">
               I enjoy development, computer graphics and animations because it
               lets me be creative.
@@ -129,14 +129,14 @@ export default function Home() {
           </div>
         </motion.div>
 
-        <div className="mt-10 w-2/3 h-2 border-t"></div>
+        {/* <div className="mt-10 w-2/3 h-2 border-b"></div> */}
 
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="flex w-full mt-10 justify-center"
+          className="flex w-full pt-4 mt-10 justify-center"
         >
           <div className="flex gap-8 px-4 md:px-10 py-6">
             {experiences.map((exp, index) => (
