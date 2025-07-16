@@ -46,8 +46,8 @@ const experiences = [
   {
     title: "LG AI Research",
     link: "https://www.lgresearch.ai/",
-    subtitle: "Computer Vision Document Data Engineer Intern",
-    date: "Mar 2025 - Present",
+    subtitle: "Computer Vision Data Engineer Intern",
+    date: "Mar 2025 - May 2025",
     icon: (
       <img
         src="/lg_ai_research.jpeg"
@@ -66,17 +66,10 @@ export default function Home() {
         <div className="flex w-full h-fit justify-end gap-2 px-44">
           <Button
             variant="ghost"
-            className="bg-white"
+            className="bg-white rounded-2xl"
             onClick={() => navigate("/projects")}
           >
             Projects
-          </Button>
-          <Button
-            variant="ghost"
-            className="bg-white"
-            onClick={() => navigate("/blog")}
-          >
-            Blog
           </Button>
         </div>
         <motion.div initial={{ opacity: 1 }}>

@@ -3,6 +3,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import Footer from "@/features/Footer";
+import { ArrowLeft } from "lucide-react";
 
 const projects = [
   {
@@ -34,10 +35,10 @@ export default function Projects() {
         <div className="flex w-full justify-end gap-2">
           <Button
             variant="ghost"
-            className="bg-white"
-            onClick={() => navigate("/blog")}
+            className="bg-white rounded-2xl"
+            onClick={() => navigate("/")}
           >
-            Blog
+            <ArrowLeft /> Back
           </Button>
         </div>
       </div>
