@@ -1,9 +1,15 @@
 import { RiGithubFill, RiLinkedinBoxFill } from "react-icons/ri";
+import { useLocation } from "react-router-dom";
 
 export default function Footer() {
+  const { pathname } = useLocation();
+  const bottomPadding = pathname === "/" ? "" : "pb-16";
+
   return (
-    <div className="flex w-full h-fit justify-center text-xs pt-16 pb-2">
-      <footer className="flex w-2/3 justify-between border-t pt-4">
+    <div
+      className={`flex w-full h-fit justify-center text-xs pt-16 pb-2 px-44 ${bottomPadding}`}
+    >
+      <footer className="flex w-full justify-between border-t pt-4">
         <div className="mb-2 md:mb-0">
           © {new Date().getFullYear()}, Jin Won Lee. All rights reserved.
         </div>
