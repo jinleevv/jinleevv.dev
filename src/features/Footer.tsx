@@ -7,9 +7,9 @@ export default function Footer() {
 
   return (
     <div
-      className={`flex w-full h-fit justify-center text-xs pt-16 pb-2 px-44 ${bottomPadding}`}
+      className={`flex w-full h-fit justify-center text-xs px-4 md:pt-16 pb-2 md:px-44 ${bottomPadding}`}
     >
-      <footer className="flex w-full justify-between border-t pt-4">
+      <footer className="flex flex-col md:flex-row w-full items-center md:justify-between border-t pt-4 pb-4">
         <div className="mb-2 md:mb-0">
           © {new Date().getFullYear()}, Jin Won Lee. All rights reserved.
         </div>

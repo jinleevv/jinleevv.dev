@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import Footer from "@/features/Footer";
 import { ArrowLeft } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const projects = [
   {
@@ -20,12 +21,29 @@ const projects = [
   },
 ];
 
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth < breakpoint : false
+  );
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < breakpoint);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [breakpoint]);
+  return isMobile;
+}
+
 export default function Projects() {
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
+
+  const initialFilter = isMobile
+    ? "drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.15))"
+    : "drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.25))";
 
   return (
     <section className="h-screen w-screen font-jost">
-      <div className="flex w-full py-[76px] px-44">
+      <div className="flex justify-center w-10/12 md:w-full md:px-44 py-6 md:py-[76px] mx-auto">
         <div
           className="flex w-full justify-start cursor-pointer my-auto"
           onClick={() => navigate("/")}
@@ -51,17 +69,17 @@ export default function Projects() {
         transition={{
           duration: 0.7,
         }}
-        className="flex flex-col w-full justify-center items-center space-y-3"
+        className="flex flex-col w-full justify-center items-center space-y-1 md:space-y-3 mb-12"
       >
         {projects.map((project, index) => (
           <div
             key={index}
-            className={`flex border w-3/4 rounded-3xl shadow-lg bg-zinc-50 mb-10 ${
+            className={`grid md:flex border w-3/4 rounded-3xl shadow-lg bg-zinc-50 mb-10 ${
               index % 2 !== 0 ? "flex-row-reverse" : "flex-row"
             }`}
           >
             {/* Text Section */}
-            <div className="w-3/4 p-10 flex flex-col justify-center">
+            <div className="w-full md:w-3/4 px-10 py-7 md:p-10 flex flex-col justify-center">
               <Label className="text-4xl font-bold text-black leading-none">
                 {project.name}
               </Label>
@@ -71,28 +89,28 @@ export default function Projects() {
             </div>
 
             {/* Image Section */}
-            <div className="flex items-center justify-center w-full h-full overflow-hidden">
+            <div className="flex items-center justify-center w-full overflow-hidden p-2 md:p-0">
               <motion.img
                 src={project.path}
                 alt={project.name}
                 initial={{
                   scale: 1,
-                  filter: "drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.25))",
+                  filter: initialFilter,
                 }}
                 whileHover={{
                   scale: 1.1,
                   transition: { duration: 0.3, ease: "easeOut" },
                   filter: "drop-shadow(6px 6px 8px rgba(0, 0, 0, 0.25))",
                 }}
-                className={`w-full h-auto mt-10 max-w-none rounded-lg object-cover ${
-                  index % 2 !== 0 ? "mr-32 2xl:mr-44" : "ml-32 2xl:ml-44"
+                className={`w-full h-auto md:mt-10 max-w-none rounded-2xl object-cover ${
+                  index % 2 !== 0 ? "md:mr-32 2xl:mr-44" : "md:ml-32 2xl:ml-44"
                 }`}
               />
             </div>
           </div>
         ))}
       </motion.div>
-      
+
       <Footer />
     </section>
   );

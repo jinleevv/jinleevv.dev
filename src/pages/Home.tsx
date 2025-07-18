@@ -61,9 +61,9 @@ export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <section className="min-h-screen w-screen flex flex-col justify-between font-jost">
+    <section className="h-screen w-screen flex flex-col justify-between font-jost">
       <div className="flex-grow flex flex-col justify-center items-center space-y-3">
-        <div className="flex w-full h-fit justify-end gap-2 px-44">
+        <div className="flex w-full h-fit justify-end gap-2 px-6 py-4 md:py-0 md:px-44">
           <Button
             variant="ghost"
             className="bg-white rounded-2xl"
@@ -80,7 +80,7 @@ export default function Home() {
             </Label>
           </div>
 
-          <div className="mt-2 flex justify-center gap-6 text-sm">
+          <div className="mt-2 flex flex-col md:flex-row justify-center items-center gap-3 md:gap-6 text-sm">
             <div className="flex gap-1">
               <BriefcaseBusiness strokeWidth={1.25} size={20} />
               <Label className="m-auto">LG AI Research</Label>
@@ -89,35 +89,37 @@ export default function Home() {
               <School strokeWidth={1.25} size={20} />
               <Label className="m-auto">McGill University</Label>
             </div>
-            <a
-              className="flex gap-1"
-              href="https://www.linkedin.com/in/jinleevv/"
-              target="_blank"
-            >
-              <RiLinkedinBoxFill size={20} className="text-black" />
-              <Label className="m-auto text-black hover:text-gray-600">
-                LinkedIn
-              </Label>
-            </a>
-            <a
-              className="flex gap-1 hover:text-gray-300"
-              href="https://github.com/jinleevv"
-              target="_blank"
-            >
-              <RiGithubFill size={20} className="text-black" />
-              <Label className="m-auto text-black hover:text-gray-600">
-                Github
-              </Label>
-            </a>
+            <div className="flex gap-4">
+              <a
+                className="flex gap-1"
+                href="https://www.linkedin.com/in/jinleevv/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <RiLinkedinBoxFill size={20} className="text-black" />
+                <Label className="m-auto text-black hover:text-gray-600">
+                  LinkedIn
+                </Label>
+              </a>
+              <a
+                className="flex gap-1"
+                href="https://github.com/jinleevv"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <RiGithubFill size={20} className="text-black" />
+                <Label className="m-auto text-black hover:text-gray-600">
+                  Github
+                </Label>
+              </a>
+            </div>
           </div>
 
-          <div className="grid mt-4 space-y-1 mb-4">
-            <Label className="text-center max-w-2xl text-sm text-gray-400">
+          <div className="flex justify-center mt-4 mb-4">
+            <Label className="mx-auto pt-6 md:py-0 text-center w-3/5 text-sm text-gray-400">
               I enjoy development, computer graphics and animations because it
-              lets me be creative.
-            </Label>{" "}
-            <Label className="text-center max-w-lg text-sm text-gray-400">
-              When I’m not doing projects, I play music and shred the slopes :)
+              lets me be creative. When I’m not doing projects, I play music and
+              shred the slopes :)
             </Label>
           </div>
         </motion.div>
@@ -131,7 +133,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="flex w-full pt-4 mt-10 justify-center"
         >
-          <div className="flex gap-8 px-4 md:px-10 py-6">
+          <div className="flex flex-col-reverse md:flex-row gap-8 px-4 md:px-10 py-6">
             {experiences.map((exp, index) => (
               <div
                 key={index}
@@ -153,9 +155,14 @@ export default function Home() {
                 <div className="text-xs text-gray-500">{exp.subtitle}</div>
                 <div className="text-[10px] text-gray-400 mt-1">{exp.date}</div>
 
-                {/* Connector line */}
+                {/* mobile: show under all except index 0 */}
+                {index !== 0 && (
+                  <div className="md:hidden w-px h-4 bg-gray-300 mt-5 mb-3" />
+                )}
+
+                {/* desktop: show between every card except the last */}
                 {index !== experiences.length - 1 && (
-                  <div className="absolute top-5 left-full h-[2px] w-8 bg-gray-300" />
+                  <div className="hidden md:block absolute top-5 left-full h-px w-8 bg-gray-300" />
                 )}
               </div>
             ))}
