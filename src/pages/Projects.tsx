@@ -1,23 +1,33 @@
 import { motion } from "framer-motion";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import Footer from "@/features/Footer";
 import { ArrowLeft } from "lucide-react";
 import { useEffect, useState } from "react";
+import { LuExternalLink } from "react-icons/lu";
 
 const projects = [
+  {
+    path: "/DRSIMON.png",
+    name: "Domain-wise Rewrite for Segment-Informed Medical Oversight Network",
+    description:
+      "DR.SIMON is a lightweight query-rewriting framework that first segments medical videos into coarse events, then transforms user queries into visually explicit paraphrases using a frozen video-language backbone, and finally grounds those paraphrases to the most relevant video segments. Evaluated on MedVidCL, it delivers significant gains over recent video-LLMs without any additional training, showing that fixing lexical misalignment alone can greatly improve temporal grounding in medical videos.",
+    link: "https://drsimon-rewrite.github.io/",
+  },
   {
     path: "/Booky.png",
     name: "Booky",
     description:
       "Booky is scheduling platform enabling users to effortlessly organize meetings with integrated Zoom scheduling, automated availability matching, and collaborative meeting-minute management, achieving 130+ active users.",
+    link: "https://github.com/jinleevv/Booky",
   },
   {
     path: "/FinanceManagementSystem.png",
     name: "Finance Management System",
     description:
       "Finance Management System is a system designed to streamline monthly closing processes for corporate finance departments. It enables users to efficiently manage and track corporate card transactions and associated receipt images, ensuring smooth month-end closing operations.",
+    link: "https://github.com/jinleevv/finance-management-system",
   },
 ];
 
@@ -69,46 +79,65 @@ export default function Projects() {
         transition={{
           duration: 0.7,
         }}
-        className="flex flex-col w-full justify-center items-center space-y-1 md:space-y-3 mb-12"
+        className="flex flex-col w-full items-center space-y-5 md:space-y-10 mb-12 p-2 md:p-0"
       >
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className={`grid md:flex border w-3/4 rounded-3xl shadow-lg bg-zinc-50 mb-10 ${
-              index % 2 !== 0 ? "flex-row-reverse" : "flex-row"
-            }`}
-          >
-            {/* Text Section */}
-            <div className="w-full md:w-3/4 px-10 py-7 md:p-10 flex flex-col justify-center">
-              <Label className="text-4xl font-bold text-black leading-none">
-                {project.name}
-              </Label>
-              <Label className="mt-2 text-sm font-light">
-                {project.description}
-              </Label>
-            </div>
+        {projects.map((project, index) => {
+          const displayName =
+            isMobile && index === 0 ? "DR.SIMON" : project.name;
+          return (
+            <div
+              key={index}
+              className={`flex flex-col md:flex-row ${
+                index % 2 !== 0 ? "md:flex-row-reverse" : ""
+              }
+            w-full max-h-[600px] md:w-3/4 border rounded-3xl shadow-lg bg-zinc-50`}
+            >
+              {/* Text Section */}
+              <div className="w-full md:w-3/4 px-10 py-7 md:p-10 flex flex-col justify-center">
+                <Label className="text-4xl font-bold text-black leading-none">
+                  {displayName}
+                </Label>
+                <Label className="mt-2 text-sm font-light">
+                  {project.description}
+                </Label>
+                <div className="flex w-full justify-end mt-5">
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xl text-gray-600 hover:text-black"
+                    >
+                      <LuExternalLink />
+                    </a>
+                  )}
+                </div>
+              </div>
 
-            {/* Image Section */}
-            <div className="flex items-center justify-center w-full overflow-hidden p-2 md:p-0">
-              <motion.img
-                src={project.path}
-                alt={project.name}
-                initial={{
-                  scale: 1,
-                  filter: initialFilter,
-                }}
-                whileHover={{
-                  scale: 1.1,
-                  transition: { duration: 0.3, ease: "easeOut" },
-                  filter: "drop-shadow(6px 6px 8px rgba(0, 0, 0, 0.25))",
-                }}
-                className={`w-full h-auto md:mt-10 max-w-none rounded-2xl object-cover ${
-                  index % 2 !== 0 ? "md:mr-32 2xl:mr-44" : "md:ml-32 2xl:ml-44"
-                }`}
-              />
+              {/* Image Section */}
+              <div className="flex items-center justify-center w-full overflow-hidden rounded-3xl p-2 md:p-0">
+                <motion.img
+                  src={project.path}
+                  alt={project.name}
+                  initial={{
+                    scale: 1,
+                    filter: initialFilter,
+                  }}
+                  whileHover={{
+                    scale: 1.1,
+                    transition: { duration: 0.3, ease: "easeOut" },
+                    filter: "drop-shadow(6px 6px 8px rgba(0, 0, 0, 0.25))",
+                  }}
+                  className={`w-full h-auto md:mt-10 max-w-none rounded-2xl object-cover ${
+                    index % 2 !== 0
+                      ? "md:mr-32 2xl:mr-44"
+                      : "md:ml-32 2xl:ml-44"
+                  }`}
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </motion.div>
 
       <Footer />
