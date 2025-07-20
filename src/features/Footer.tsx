@@ -15,7 +15,12 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-4">
-          <span className="font-medium">jinwon.lee@mail.mcgill.ca</span>
+          <a
+            href="mailto:jinwon.lee@mail.mcgill.ca"
+            className="hover:text-black"
+          >
+            jinwon.lee@mail.mcgill.ca
+          </a>
           <a
             href="https://github.com/jinleevv"
             target="_blank"
