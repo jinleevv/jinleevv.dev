@@ -46,7 +46,7 @@ const experiences = [
   {
     title: "LG AI Research",
     link: "https://www.lgresearch.ai/",
-    subtitle: "Computer Vision Data Engineer Intern",
+    subtitle: "AI Engineer Intern",
     date: "Mar 2025 - May 2025",
     icon: (
       <img

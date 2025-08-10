@@ -6,6 +6,7 @@ import Footer from "@/features/Footer";
 import { ArrowLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 import { LuExternalLink } from "react-icons/lu";
+import { RiGithubFill } from "react-icons/ri";
 
 const projects = [
   {
@@ -14,20 +15,31 @@ const projects = [
     description:
       "DR.SIMON is a lightweight query-rewriting framework that first segments medical videos into coarse events, then transforms user queries into visually explicit paraphrases using a frozen video-language backbone, and finally grounds those paraphrases to the most relevant video segments. Evaluated on MedVidCL, it delivers significant gains over recent video-LLMs without any additional training, showing that fixing lexical misalignment alone can greatly improve temporal grounding in medical videos.",
     link: "https://drsimon-rewrite.github.io/",
+    github: "https://github.com/drsimon-rewrite/DR.SIMON",
   },
   {
     path: "/Booky.png",
     name: "Booky",
     description:
       "Booky is scheduling platform enabling users to effortlessly organize meetings with integrated Zoom scheduling, automated availability matching, and collaborative meeting-minute management, achieving 130+ active users.",
-    link: "https://github.com/jinleevv/Booky",
+    link: "",
+    github: "https://github.com/jinleevv/Booky",
   },
   {
     path: "/FinanceManagementSystem.png",
     name: "Finance Management System",
     description:
-      "Finance Management System is a system designed to streamline monthly closing processes for corporate finance departments. It enables users to efficiently manage and track corporate card transactions and associated receipt images, ensuring smooth month-end closing operations.",
-    link: "https://github.com/jinleevv/finance-management-system",
+      "Finance Management System is a system designed to streamline monthly closing processes for corporate finance departments. It successfully processed and managed over 6,000 corporate card transactions along with their associated receipt images, ensuring smooth and accurate month-end closing operations.",
+    link: "",
+    github: "https://github.com/jinleevv/finance-management-system",
+  },
+  {
+    path: "/akcse.png",
+    name: "AKCSE McGill",
+    description:
+      "AKCSE McGill is a website that students within the student body collaboratively create. The website serves as a space where individuals can be informed about events, initiatives, and updates within AKCSE; this platform also offers hands-on experiences for members to gain learning opportunities through web development and GitHub Collaboration both within and outside the club.",
+    link: "https://akcsemcgill.ca",
+    github: "https://github.com/jinleevv/akcse",
   },
 ];
 
@@ -100,7 +112,7 @@ export default function Projects() {
                 <Label className="mt-2 text-sm font-light">
                   {project.description}
                 </Label>
-                <div className="flex w-full justify-end mt-5">
+                <div className="flex w-full justify-end mt-5 gap-3">
                   {project.link && (
                     <a
                       href={project.link}
@@ -109,6 +121,16 @@ export default function Projects() {
                       className="text-xl text-gray-600 hover:text-black"
                     >
                       <LuExternalLink />
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xl text-gray-800 hover:text-black"
+                    >
+                      <RiGithubFill />
                     </a>
                   )}
                 </div>
