@@ -105,7 +105,7 @@ export default function Projects() {
             w-full max-h-[600px] md:w-3/4 border rounded-3xl shadow-lg bg-zinc-50`}
             >
               {/* Text Section */}
-              <div className="w-full md:w-3/4 px-10 py-7 md:p-10 flex flex-col justify-center">
+              <div className="w-full md:w-3/4 px-7 py-7 md:p-10 flex flex-col justify-center">
                 <Label className="text-4xl font-bold text-black leading-none">
                   {displayName}
                 </Label>
@@ -137,7 +137,7 @@ export default function Projects() {
               </div>
 
               {/* Image Section */}
-              <div className="flex items-center justify-center w-full overflow-hidden rounded-3xl p-2 md:p-0">
+              <div className="hidden md:flex items-center justify-center w-full overflow-hidden rounded-3xl">
                 <motion.img
                   src={project.path}
                   alt={project.name}
