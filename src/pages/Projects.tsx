@@ -29,7 +29,7 @@ const projects = [
     path: "/FinanceManagementSystem.png",
     name: "Finance Management System",
     description:
-      "Finance Management System is a system designed to streamline monthly closing processes for corporate finance departments. It successfully processed and managed over 6,000 corporate card transactions along with their associated receipt images, ensuring smooth and accurate month-end closing operations.",
+      "Finance Management System is a system designed to streamline monthly closing processes for corporate finance departments. It successfully processed and managed over 10,000 transactions records along with their associated receipt images, ensuring smooth and accurate month-end closing operations.",
     link: "",
     github: "https://github.com/jinleevv/finance-management-system",
   },
