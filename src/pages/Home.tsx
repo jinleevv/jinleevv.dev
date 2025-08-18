@@ -97,7 +97,7 @@ export default function Home() {
                 rel="noopener noreferrer"
               >
                 <RiLinkedinBoxFill size={20} className="text-black" />
-                <Label className="m-auto text-black hover:text-gray-600">
+                <Label className="m-auto text-black hover:text-gray-600 cursor-pointer">
                   LinkedIn
                 </Label>
               </a>
@@ -108,7 +108,7 @@ export default function Home() {
                 rel="noopener noreferrer"
               >
                 <RiGithubFill size={20} className="text-black" />
-                <Label className="m-auto text-black hover:text-gray-600">
+                <Label className="m-auto text-black hover:text-gray-600 cursor-pointer">
                   Github
                 </Label>
               </a>
@@ -116,7 +116,7 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center mt-4 mb-4">
-            <Label className="mx-auto pt-6 md:py-0 text-center w-3/5 text-sm text-gray-400">
+            <Label className="mx-auto pt-6 md:py-0 text-center w-3/5 text-sm text-gray-700">
               I enjoy development, computer graphics and animations because it
               lets me be creative. When I’m not doing projects, I play music and
               shred the slopes :)
