@@ -55,18 +55,18 @@ const experiences = [
       />
     ),
   },
-  // {
-  //   title: "The Matter Lab",
-  //   link: "https://www.matter.toronto.edu/",
-  //   subtitle: "Undergraduate Researcher",
-  //   date: "Aug 2025 - Current",
-  //   icon: (
-  //     <img
-  //       src="/matter_lab_uoft_logo.jpeg"
-  //       className="rounded-2xl w-10 h-10 border-[1px] border-gray-200"
-  //     />
-  //   ),
-  // },
+  {
+    title: "The Matter Lab @ UofT",
+    link: "https://www.matter.toronto.edu/",
+    subtitle: "Undergraduate Researcher",
+    date: "Aug 2025 - Current",
+    icon: (
+      <img
+        src="/matter_lab_uoft_logo.jpeg"
+        className="rounded-2xl w-10 h-10 border-[1px] border-gray-200"
+      />
+    ),
+  },
 ];
 
 export default function Home() {
@@ -95,7 +95,7 @@ export default function Home() {
           <div className="mt-2 flex flex-col md:flex-row justify-center items-center gap-3 md:gap-6 text-sm">
             <div className="flex gap-1">
               <BriefcaseBusiness strokeWidth={1.25} size={20} />
-              <Label className="m-auto">LG AI Research</Label>
+              <Label className="m-auto">The Matter Lab @ UofT</Label>
             </div>
             <div className="flex gap-1">
               <School strokeWidth={1.25} size={20} />
