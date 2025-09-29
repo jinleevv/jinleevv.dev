@@ -11,7 +11,7 @@ import { RiGithubFill } from "react-icons/ri";
 const projects = [
   {
     path: "/DRSIMON.png",
-    name: "Domain-wise Rewrite for Segment-Informed Medical Oversight Network",
+    name: "DR.SIMON",
     description:
       "DR.SIMON is a lightweight query-rewriting framework that first segments medical videos into coarse events, then transforms user queries into visually explicit paraphrases using a frozen video-language backbone, and finally grounds those paraphrases to the most relevant video segments. Evaluated on MedVidCL, it delivers significant gains over recent video-LLMs without any additional training, showing that fixing lexical misalignment alone can greatly improve temporal grounding in medical videos.",
     link: "https://drsimon-rewrite.github.io/",
@@ -21,7 +21,7 @@ const projects = [
     path: "/Booky.png",
     name: "Booky",
     description:
-      "Booky is scheduling platform enabling users to effortlessly organize meetings with integrated Zoom scheduling, automated availability matching, and collaborative meeting-minute management, achieving 130+ active users.",
+      "Booky is scheduling platform enabling users to effortlessly organize meetings with integrated Zoom scheduling, automated availability matching, and collaborative meeting-minute management, achieving 160+ active users.",
     link: "",
     github: "https://github.com/jinleevv/Booky",
   },
@@ -64,8 +64,8 @@ export default function Projects() {
     : "drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.25))";
 
   return (
-    <section className="h-screen w-screen font-jost">
-      <div className="flex justify-center w-10/12 md:w-full md:px-44 py-6 md:py-[76px] mx-auto">
+    <div className="min-h-screen w-full flex flex-col justify-center space-y-10 px-10 font-jost">
+      <nav className="flex justify-end bg-white mx-auto w-full max-w-6xl py-4 mt-10">
         <div
           className="flex w-full justify-start cursor-pointer my-auto"
           onClick={() => navigate("/")}
@@ -81,7 +81,7 @@ export default function Projects() {
             <ArrowLeft /> Back
           </Button>
         </div>
-      </div>
+      </nav>
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -91,23 +91,21 @@ export default function Projects() {
         transition={{
           duration: 0.7,
         }}
-        className="flex flex-col w-full items-center space-y-5 md:space-y-10 mb-12 p-2 md:p-0"
+        className="grid grid-cols-1 gap-8 w-full max-w-6xl mx-auto mb-12 p-2 md:p-0"
       >
         {projects.map((project, index) => {
-          const displayName =
-            isMobile && index === 0 ? "DR.SIMON" : project.name;
           return (
             <div
               key={index}
               className={`flex flex-col md:flex-row ${
                 index % 2 !== 0 ? "md:flex-row-reverse" : ""
               }
-            w-full max-h-[600px] md:w-3/4 border rounded-3xl shadow-lg bg-zinc-50`}
+            max-h-[500px] border rounded-3xl shadow-lg bg-zinc-50 `}
             >
               {/* Text Section */}
               <div className="w-full md:w-3/4 px-7 py-7 md:p-10 flex flex-col justify-center">
                 <Label className="text-4xl font-bold text-black leading-none">
-                  {displayName}
+                  {project.name}
                 </Label>
                 <Label className="mt-2 text-sm font-light">
                   {project.description}
@@ -163,6 +161,6 @@ export default function Projects() {
       </motion.div>
 
       <Footer />
-    </section>
+    </div>
   );
 }

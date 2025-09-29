@@ -1,6 +1,7 @@
 import { Label } from "@/components/ui/label";
-import { BriefcaseBusiness, School } from "lucide-react";
-import { RiLinkedinBoxFill, RiGithubFill } from "react-icons/ri";
+import { FaBuilding } from "react-icons/fa";
+import { RiGithubFill, RiLinkedinBoxFill } from "react-icons/ri";
+import { IoIosSchool } from "react-icons/io";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
@@ -73,17 +74,17 @@ export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <section className="h-screen w-screen flex flex-col justify-between font-jost">
-      <div className="flex-grow flex flex-col justify-center items-center space-y-3">
-        <div className="flex w-full h-fit justify-end gap-2 px-6 py-4 md:py-0 md:px-44">
-          <Button
-            variant="ghost"
-            className="bg-white rounded-2xl"
-            onClick={() => navigate("/projects")}
-          >
-            Projects
-          </Button>
-        </div>
+    <div className="min-h-screen w-full flex flex-col justify-center space-y-10 px-4 font-jost">
+      <nav className="flex justify-end bg-white mx-auto w-full max-w-6xl py-4">
+        <Button
+          variant="ghost"
+          className="bg-white rounded-2xl"
+          onClick={() => navigate("/projects")}
+        >
+          Projects
+        </Button>
+      </nav>
+      <div className="w-full max-w-6xl mx-auto flex flex-col justify-center items-center space-y-3">
         <motion.div initial={{ opacity: 1 }}>
           <div className="w-full flex flex-col items-center justify-center">
             <img src="/jinleevv.png" className="w-64 h-64" />
@@ -94,11 +95,11 @@ export default function Home() {
 
           <div className="mt-2 flex flex-col md:flex-row justify-center items-center gap-3 md:gap-6 text-sm">
             <div className="flex gap-1">
-              <BriefcaseBusiness strokeWidth={1.25} size={20} />
+              <FaBuilding strokeWidth={1.25} size={16} />
               <Label className="m-auto">The Matter Lab @ UofT</Label>
             </div>
             <div className="flex gap-1">
-              <School strokeWidth={1.25} size={20} />
+              <IoIosSchool strokeWidth={1.25} size={20} />
               <Label className="m-auto">McGill University</Label>
             </div>
             <div className="flex gap-4">
@@ -136,8 +137,6 @@ export default function Home() {
           </div>
         </motion.div>
 
-        {/* <div className="mt-10 w-2/3 h-2 border-b"></div> */}
-
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -145,7 +144,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="flex w-full pt-4 mt-10 justify-center"
         >
-          <div className="flex flex-col-reverse md:flex-row gap-8 px-4 md:px-10 py-6">
+          <div className="flex flex-col-reverse md:flex-row gap-6 py-6">
             {experiences.map((exp, index) => (
               <div
                 key={index}
@@ -180,9 +179,8 @@ export default function Home() {
             ))}
           </div>
         </motion.div>
-
-        <Footer />
       </div>
-    </section>
+      <Footer />
+    </div>
   );
 }
