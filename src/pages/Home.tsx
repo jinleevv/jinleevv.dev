@@ -59,7 +59,7 @@ const experiences = [
   {
     title: "The Matter Lab @ UofT",
     link: "https://www.matter.toronto.edu/",
-    subtitle: "Undergraduate Researcher",
+    subtitle: "AI Research Intern",
     date: "Aug 2025 - Current",
     icon: (
       <img
