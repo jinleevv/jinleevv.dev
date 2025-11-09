@@ -77,7 +77,7 @@ export default function Projects() {
               className={`flex flex-col md:flex-row ${
                 index % 2 !== 0 ? "md:flex-row-reverse" : ""
               }
-            max-h-[500px] border rounded-3xl shadow-lg`}
+            max-h-[500px] border rounded-3xl shadow-sm`}
             >
               {/* Text Section */}
               <div className="w-full md:w-3/4 px-7 py-7 md:p-10 flex flex-col justify-center">

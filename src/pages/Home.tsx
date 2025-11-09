@@ -70,9 +70,11 @@ export default function Home() {
         <Button variant="ghost" className="bg-white">
           Jin Won Lee
         </Button>
-        <Button variant="ghost" className="bg-white">
-          Hello World!
-        </Button>
+        <a href="mailto:jinwon.lee@mail.mcgill.ca">
+          <Button variant="ghost" className="bg-white">
+            jinwon.lee@mail.mcgill.ca
+          </Button>
+        </a>
       </nav>
       <div className="w-full max-w-6xl mx-auto flex flex-col justify-center items-center space-y-3">
         <motion.div initial={{ opacity: 1 }}>
@@ -132,28 +134,28 @@ export default function Home() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="flex w-full pt-4 mt-10 justify-center ml-16"
+          className="flex flex-col lg:flex-row w-full pt-4 mt-10 justify-center px-4 lg:px-0"
         >
           <div className="w-1/6">
             <Label className="text-xl font-jost font-semibold">
               Experiences
             </Label>
           </div>
-          <div className="flex w-3/4 flex-col gap-4">
+          <div className="flex w-full lg:w-3/4 flex-col gap-4">
             {experiencesByYear.map(({ year, items }) => (
               <div key={year}>
-                <Label className="text-md font-jost font-semibold mb-2">
+                <Label className="text-md font-jost font-semibold italic mb-2">
                   {year}
                 </Label>
 
                 {items.map((exp, index) => (
                   <div
                     key={index}
-                    className="flex w-full gap-3 space-y-3 items-start ml-7"
+                    className="flex w-full gap-3 space-y-3 items-start lg:ml-7"
                   >
                     <div className="z-10 mt-4">{exp.icon}</div>
 
-                    <motion.div className="flex w-3/5 items-center gap-4 border border-gray-200 rounded-xl px-5 py-6">
+                    <motion.div className="flex w-full lg:w-3/5 items-center gap-4 border border-gray-200 rounded-xl px-5 py-6">
                       <div className="flex flex-col w-full">
                         <div className="flex w-full justify-between">
                           <a
@@ -168,9 +170,12 @@ export default function Home() {
                             <LuExternalLink className="w-3 h-3 mt-1.5" />
                           </a>
 
-                          <div className="text-xs text-gray-500 mt-1">
+                          <div className="hidden lg:block text-xs text-gray-500 mt-1">
                             {exp.date}
                           </div>
+                        </div>
+                        <div className="block lg:hidden text-sm text-gray-500 mt-1">
+                          {exp.date}
                         </div>
                         <div className="text-sm text-gray-500">
                           {exp.subtitle}
@@ -193,12 +198,14 @@ export default function Home() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="flex w-full pt-4 mt-12 justify-center ml-16"
+          className="flex flex-col lg:flex-row w-full pt-4 mt-12 justify-center px-4 lg:px-0"
         >
           <div className="w-1/6">
-            <Label className="text-xl font-jost font-semibold">Projects</Label>
+            <Label className="text-xl font-jost font-semibold lg:-ml-20">
+              Projects
+            </Label>
           </div>
-          <div className="flex w-3/4 flex-col gap-4 font-jost">
+          <div className="flex w-full lg:w-3/4 flex-col gap-4 lg:mt-14 lg:-ml-44">
             <Projects />
           </div>
         </motion.div>
