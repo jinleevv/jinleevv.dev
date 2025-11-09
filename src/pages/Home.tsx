@@ -45,7 +45,7 @@ const expereince24_25 = [
     subtitle: "AI Engineer Intern",
     date: "Mar 2025 - May 2025",
     icon: <img src="/lg_ai_research.jpeg" className="rounded-lg w-12 h-12" />,
-    oneliner: "EXAONE 4.0 VL - Vision Lab",
+    oneliner: "Vision Lab - EXAONE 4.0 VL",
   },
   {
     title: "Ultium CAM",
@@ -134,14 +134,14 @@ export default function Home() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="flex flex-col lg:flex-row w-full pt-4 mt-10 justify-center px-4 lg:px-0"
+          className="flex flex-col md:flex-row w-full pt-4 mt-10 justify-center px-4 gap-4 lg:px-0"
         >
           <div className="w-1/6">
             <Label className="text-xl font-jost font-semibold">
               Experiences
             </Label>
           </div>
-          <div className="flex w-full lg:w-3/4 flex-col gap-4">
+          <div className="flex w-full md:mt-6 lg:mt-0 lg:w-3/4 flex-col gap-4">
             {experiencesByYear.map(({ year, items }) => (
               <div key={year}>
                 <Label className="text-md font-jost font-semibold italic mb-2">
@@ -155,7 +155,7 @@ export default function Home() {
                   >
                     <div className="z-10 mt-4">{exp.icon}</div>
 
-                    <motion.div className="flex w-full lg:w-3/5 items-center gap-4 border border-gray-200 rounded-xl px-5 py-6">
+                    <motion.div className="flex w-full md:w-3/4 lg:w-3/5 items-center gap-4 border border-gray-200 rounded-xl px-5 py-6">
                       <div className="flex flex-col w-full">
                         <div className="flex w-full justify-between">
                           <a
@@ -205,7 +205,7 @@ export default function Home() {
               Projects
             </Label>
           </div>
-          <div className="flex w-full lg:w-3/4 flex-col gap-4 lg:mt-14 lg:-ml-44">
+          <div className="flex w-full lg:w-3/4 flex-col gap-4 mt-7 lg:mt-14 lg:-ml-44">
             <Projects />
           </div>
         </motion.div>
