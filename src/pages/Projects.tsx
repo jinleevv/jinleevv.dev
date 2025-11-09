@@ -1,9 +1,5 @@
 import { motion } from "framer-motion";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
-import Footer from "@/features/Footer";
-import { ArrowLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 import { LuExternalLink } from "react-icons/lu";
 import { RiGithubFill } from "react-icons/ri";
@@ -11,9 +7,9 @@ import { RiGithubFill } from "react-icons/ri";
 const projects = [
   {
     path: "/DRSIMON.png",
-    name: "DR.SIMON",
+    name: "DR.SIMON - Best Paper Award",
     description:
-      "DR.SIMON is a lightweight query-rewriting framework that first segments medical videos into coarse events, then transforms user queries into visually explicit paraphrases using a frozen video-language backbone, and finally grounds those paraphrases to the most relevant video segments. Evaluated on MedVidCL, it delivers significant gains over recent video-LLMs without any additional training, showing that fixing lexical misalignment alone can greatly improve temporal grounding in medical videos.",
+      "DR.SIMON is a lightweight query-rewriting framework that first segments medical videos into coarse events, then transforms user queries into visually explicit paraphrases using a frozen video-language backbone, and finally grounds those paraphrases to the most relevant video segments.",
     link: "https://drsimon-rewrite.github.io/",
     github: "https://github.com/drsimon-rewrite/DR.SIMON",
   },
@@ -56,7 +52,6 @@ function useIsMobile(breakpoint = 768) {
 }
 
 export default function Projects() {
-  const navigate = useNavigate();
   const isMobile = useIsMobile();
 
   const initialFilter = isMobile
@@ -64,25 +59,7 @@ export default function Projects() {
     : "drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.25))";
 
   return (
-    <div className="min-h-screen w-full flex flex-col justify-center space-y-10 px-10 font-jost">
-      <nav className="flex justify-end bg-white mx-auto w-full max-w-6xl py-4 mt-10">
-        <div
-          className="flex w-full justify-start cursor-pointer my-auto"
-          onClick={() => navigate("/")}
-        >
-          <Label className="cursor-pointer">Jin Won Lee</Label>
-        </div>
-        <div className="flex w-full justify-end gap-2">
-          <Button
-            variant="ghost"
-            className="bg-white rounded-2xl"
-            onClick={() => navigate("/")}
-          >
-            <ArrowLeft /> Back
-          </Button>
-        </div>
-      </nav>
-
+    <div className="min-h-screen w-full flex flex-col justify-center space-y-10">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
@@ -100,14 +77,14 @@ export default function Projects() {
               className={`flex flex-col md:flex-row ${
                 index % 2 !== 0 ? "md:flex-row-reverse" : ""
               }
-            max-h-[500px] border rounded-3xl shadow-lg bg-zinc-50 `}
+            max-h-[500px] border rounded-3xl shadow-sm`}
             >
               {/* Text Section */}
               <div className="w-full md:w-3/4 px-7 py-7 md:p-10 flex flex-col justify-center">
-                <Label className="text-4xl font-bold text-black leading-none">
+                <Label className="text-md font-bold text-black leading-none">
                   {project.name}
                 </Label>
-                <Label className="mt-2 text-sm font-light">
+                <Label className="mt-2 text-sm text-gray-500">
                   {project.description}
                 </Label>
                 <div className="flex w-full justify-end mt-5 gap-3">
@@ -118,7 +95,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="text-xl text-gray-600 hover:text-black"
                     >
-                      <LuExternalLink />
+                      <LuExternalLink className="w-4 h-4 mt-0.5" />
                     </a>
                   )}
                   {project.github && (
@@ -159,8 +136,6 @@ export default function Projects() {
           );
         })}
       </motion.div>
-
-      <Footer />
     </div>
   );
 }
