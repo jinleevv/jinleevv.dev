@@ -134,7 +134,7 @@ export default function Home() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row w-full pt-4 mt-10 justify-center px-4 gap-4 lg:px-0"
+          className="flex flex-col md:flex-row w-full pt-4 mt-10 justify-center px-4 gap-4 lg:px-0 lg:ml-20"
         >
           <div className="w-1/6">
             <Label className="text-xl font-jost font-semibold">
@@ -198,7 +198,7 @@ export default function Home() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="flex flex-col lg:flex-row w-full pt-4 mt-12 justify-center px-4 lg:px-0"
+          className="flex flex-col lg:flex-row w-full pt-4 mt-12 justify-center px-4 lg:px-0 lg:ml-20"
         >
           <div className="w-1/6">
             <Label className="text-xl font-jost font-semibold lg:-ml-20">
