@@ -122,9 +122,9 @@ export default function Home() {
 
           <div className="flex justify-center mt-4 mb-4">
             <Label className="mx-auto pt-6 md:py-0 text-center w-3/5 text-sm text-gray-700">
-              I enjoy development, computer graphics and animations because it
-              lets me be creative. When I’m not doing projects, I play music and
-              shred the slopes :)
+              I enjoy development and research because they let me be creative
+              and focus on the fundamentals. When I’m not doing projects, I play
+              music and shred the slopes :)
             </Label>
           </div>
         </motion.div>
