@@ -6,14 +6,6 @@ import { RiGithubFill } from "react-icons/ri";
 
 const projects = [
   {
-    path: "/DRSIMON.png",
-    name: "DR.SIMON - Best Paper Award",
-    description:
-      "DR.SIMON is a lightweight query-rewriting framework that first segments medical videos into coarse events, then transforms user queries into visually explicit paraphrases using a frozen video-language backbone, and finally grounds those paraphrases to the most relevant video segments.",
-    link: "https://drsimon-rewrite.github.io/",
-    github: "https://github.com/drsimon-rewrite/DR.SIMON",
-  },
-  {
     path: "/Booky.png",
     name: "Booky",
     description:

@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Footer from "@/features/Footer";
 import Projects from "./Projects";
+import Publications from "./Publications";
 import { LuExternalLink } from "react-icons/lu";
 
 const expereince22 = [
@@ -191,6 +192,22 @@ export default function Home() {
                 ))}
               </div>
             ))}
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="flex flex-col lg:flex-row w-full pt-4 mt-12 justify-center px-4 lg:px-0 lg:ml-20"
+        >
+          <div className="w-1/6">
+            <Label className="text-xl font-jost font-semibold lg:-ml-20">
+              Publications
+            </Label>
+          </div>
+          <div className="flex w-full lg:w-3/4 flex-col gap-4 mt-7 lg:mt-14 lg:-ml-44">
+            <Publications />
           </div>
         </motion.div>
         <motion.div
