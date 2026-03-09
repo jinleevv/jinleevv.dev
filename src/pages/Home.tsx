@@ -22,7 +22,7 @@ const expereince22 = [
 const expereince23 = [
   {
     title: "Flojoy",
-    link: "https://www.flojoy.ai/",
+    link: "https://docs.flojoy.ai/",
     subtitle: "Software Engineer Intern",
     date: "May 2023 - Dec 2023",
     icon: <img src="/flojoy_logo.png" className="rounded-lg w-12 h-12" />,
