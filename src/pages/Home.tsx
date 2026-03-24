@@ -65,15 +65,38 @@ const experiencesByYear = [
 ];
 
 export default function Home() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="min-h-screen w-full flex flex-col justify-center space-y-10 px-4 font-jost">
-      <nav className="flex justify-between bg-white mx-auto w-full max-w-6xl py-4">
-        <Button variant="ghost" className="bg-white">
+      <nav className="flex justify-between items-center bg-white mx-auto w-full max-w-6xl py-4">
+        <Button 
+          variant="ghost" 
+          className="bg-white px-3"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
           Jin Won Lee
         </Button>
-        <a href="mailto:jinwon.lee@mail.mcgill.ca">
+        
+        <div className="hidden md:flex items-center space-x-10">
+          <a href="#experiences" onClick={(e) => { e.preventDefault(); scrollToSection('experiences'); }} className="cursor-pointer text-sm font-medium text-gray-500 hover:text-black transition-colors">Experiences</a>
+          <a href="#publications" onClick={(e) => { e.preventDefault(); scrollToSection('publications'); }} className="cursor-pointer text-sm font-medium text-gray-500 hover:text-black transition-colors">Publications</a>
+          <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} className="cursor-pointer text-sm font-medium text-gray-500 hover:text-black transition-colors">Projects</a>
+        </div>
+
+        <a href="mailto:jinwon.lee@mail.mcgill.ca" className="hidden sm:block">
           <Button variant="ghost" className="bg-white">
             jinwon.lee@mail.mcgill.ca
+          </Button>
+        </a>
+        <a href="mailto:jinwon.lee@mail.mcgill.ca" className="block sm:hidden">
+          <Button variant="ghost" className="bg-white">
+            Contact
           </Button>
         </a>
       </nav>
@@ -131,6 +154,7 @@ export default function Home() {
         </motion.div>
 
         <motion.div
+          id="experiences"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -195,6 +219,7 @@ export default function Home() {
           </div>
         </motion.div>
         <motion.div
+          id="publications"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -211,6 +236,7 @@ export default function Home() {
           </div>
         </motion.div>
         <motion.div
+          id="projects"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
