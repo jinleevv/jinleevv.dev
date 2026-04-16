@@ -31,6 +31,7 @@ const publications = [
       "Alán Aspuru-Guzik",
     ],
     name: "El Agente Gráfico: Structured Execution Graphs for Scientific Agents",
+    description: "Accepted to AI4X-AC 2026 (Oral)",
     github: "",
     link: "https://arxiv.org/abs/2602.17902",
   },
