@@ -38,7 +38,7 @@ const expereince24_25 = [
     icon: (
       <img src="/matter_lab_uoft_logo.jpeg" className="rounded-lg w-12 h-12" />
     ),
-    oneliner: "El Agente Gráfico Team Member",
+    oneliner: "🧬 El Agente Gráfico, Supervisor: Alán Aspuru-Guzik",
   },
   {
     title: "LG AI Research",
@@ -46,7 +46,7 @@ const expereince24_25 = [
     subtitle: "AI Engineer Intern",
     date: "Mar 2025 - May 2025",
     icon: <img src="/lg_ai_research.jpeg" className="rounded-lg w-12 h-12" />,
-    oneliner: "Vision Lab - EXAONE 4.0 VL",
+    oneliner: "👓 Vision Lab - EXAONE 4.0 VL",
   },
   {
     title: "Ultium CAM",
@@ -57,8 +57,17 @@ const expereince24_25 = [
     oneliner: "Server Management & Software Development",
   },
 ];
+const experience26 = [{
+  title: "McGill University",
+  link: "https://mila.quebec/en/directory/jin-won-lee",
+  subtitle: "Undergraduate Researcher",
+  date: "Jan 2026 - Present",
+  icon: <img src="/mcgill_logo.jpeg" className="rounded-lg w-12 h-12" />,
+  oneliner: "Supervisor: Jackie Cheung",
+}];
 
 const experiencesByYear = [
+  { year: "2026", items: experience26 },
   { year: "2024–2025", items: expereince24_25 },
   { year: "2023", items: expereince23 },
   { year: "2022", items: expereince22 },
