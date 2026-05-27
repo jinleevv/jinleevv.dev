@@ -31,16 +31,6 @@ const expereince23 = [
 ];
 const expereince24_25 = [
   {
-    title: "The Matter Lab @ UofT",
-    link: "https://www.matter.toronto.edu/",
-    subtitle: "AI Research Intern",
-    date: "Aug 2025 - Present",
-    icon: (
-      <img src="/matter_lab_uoft_logo.jpeg" className="rounded-lg w-12 h-12" />
-    ),
-    oneliner: "🧬 El Agente Gráfico, Supervisor: Alán Aspuru-Guzik",
-  },
-  {
     title: "LG AI Research",
     link: "https://www.lgresearch.ai/",
     subtitle: "AI Engineer Intern",
@@ -57,14 +47,26 @@ const expereince24_25 = [
     oneliner: "Server Management & Software Development",
   },
 ];
-const experience26 = [{
-  title: "McGill University",
-  link: "https://mila.quebec/en/directory/jin-won-lee",
-  subtitle: "Undergraduate Researcher",
-  date: "Jan 2026 - Present",
-  icon: <img src="/mcgill_logo.jpeg" className="rounded-lg w-12 h-12" />,
-  oneliner: "Supervisor: Jackie Cheung",
-}];
+const experience26 = [
+  {
+    title: "McGill University",
+    link: "https://mila.quebec/en/directory/jin-won-lee",
+    subtitle: "Undergraduate Researcher",
+    date: "Jan 2026 - Present",
+    icon: <img src="/mcgill_logo.jpeg" className="rounded-lg w-12 h-12" />,
+    oneliner: "Supervisor: Jackie Cheung",
+  },
+  {
+    title: "The Matter Lab @ UofT",
+    link: "https://www.matter.toronto.edu/",
+    subtitle: "AI Research Intern",
+    date: "Aug 2025 - May 2026",
+    icon: (
+      <img src="/matter_lab_uoft_logo.jpeg" className="rounded-lg w-12 h-12" />
+    ),
+    oneliner: "🧬 El Agente Gráfico, Supervisor: Alán Aspuru-Guzik",
+  },
+];
 
 const experiencesByYear = [
   { year: "2026", items: experience26 },
@@ -84,18 +86,45 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full flex flex-col justify-center space-y-10 px-4 font-jost">
       <nav className="flex justify-between items-center bg-white mx-auto w-full max-w-6xl py-4">
-        <Button 
-          variant="ghost" 
+        <Button
+          variant="ghost"
           className="bg-white px-3"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           Jin Won Lee
         </Button>
-        
+
         <div className="hidden md:flex items-center space-x-10">
-          <a href="#experiences" onClick={(e) => { e.preventDefault(); scrollToSection('experiences'); }} className="cursor-pointer text-sm font-medium text-gray-500 hover:text-black transition-colors">Experiences</a>
-          <a href="#publications" onClick={(e) => { e.preventDefault(); scrollToSection('publications'); }} className="cursor-pointer text-sm font-medium text-gray-500 hover:text-black transition-colors">Publications</a>
-          <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} className="cursor-pointer text-sm font-medium text-gray-500 hover:text-black transition-colors">Projects</a>
+          <a
+            href="#experiences"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("experiences");
+            }}
+            className="cursor-pointer text-sm font-medium text-gray-500 hover:text-black transition-colors"
+          >
+            Experiences
+          </a>
+          <a
+            href="#publications"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("publications");
+            }}
+            className="cursor-pointer text-sm font-medium text-gray-500 hover:text-black transition-colors"
+          >
+            Publications
+          </a>
+          <a
+            href="#projects"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("projects");
+            }}
+            className="cursor-pointer text-sm font-medium text-gray-500 hover:text-black transition-colors"
+          >
+            Projects
+          </a>
         </div>
 
         <a href="mailto:jinwon.lee@mail.mcgill.ca" className="hidden sm:block">
