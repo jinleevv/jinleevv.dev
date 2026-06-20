@@ -51,8 +51,16 @@ const experience26 = [
   {
     title: "McGill University",
     link: "https://mila.quebec/en/directory/jin-won-lee",
+    subtitle: "Research Assistant",
+    date: "Jun 2026 - Present",
+    icon: <img src="/mcgill_logo.jpeg" className="rounded-lg w-12 h-12" />,
+    oneliner: "Supervisor: Jackie Cheung",
+  },
+  {
+    title: "McGill University",
+    link: "https://mila.quebec/en/directory/jin-won-lee",
     subtitle: "Undergraduate Researcher",
-    date: "Jan 2026 - Present",
+    date: "Jan 2026 - May 2026",
     icon: <img src="/mcgill_logo.jpeg" className="rounded-lg w-12 h-12" />,
     oneliner: "Supervisor: Jackie Cheung",
   },
