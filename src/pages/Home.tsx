@@ -50,7 +50,7 @@ const expereince24_25 = [
 const experience26 = [
   {
     title: "McGill University",
-    link: "https://mila.quebec/en/directory/jin-won-lee",
+    link: "https://cs.mcgill.ca/~jcheung/group.html",
     subtitle: "Research Assistant",
     date: "Jun 2026 - Present",
     icon: <img src="/mcgill_logo.jpeg" className="rounded-lg w-12 h-12" />,
@@ -58,7 +58,7 @@ const experience26 = [
   },
   {
     title: "McGill University",
-    link: "https://mila.quebec/en/directory/jin-won-lee",
+    link: "https://cs.mcgill.ca/~jcheung/group.html",
     subtitle: "Undergraduate Researcher",
     date: "Jan 2026 - May 2026",
     icon: <img src="/mcgill_logo.jpeg" className="rounded-lg w-12 h-12" />,
@@ -135,12 +135,12 @@ export default function Home() {
           </a>
         </div>
 
-        <a href="mailto:jinwon.lee@mail.mcgill.ca" className="hidden sm:block">
+        <a href="mailto:jinwonlee0916@gmail.com" className="hidden sm:block">
           <Button variant="ghost" className="bg-white">
-            jinwon.lee@mail.mcgill.ca
+            jinwonlee0916@gmail.com
           </Button>
         </a>
-        <a href="mailto:jinwon.lee@mail.mcgill.ca" className="block sm:hidden">
+        <a href="mailto:jinwonlee0916@gmail.com" className="block sm:hidden">
           <Button variant="ghost" className="bg-white">
             Contact
           </Button>
@@ -158,7 +158,7 @@ export default function Home() {
           <div className="mt-2 flex flex-col md:flex-row justify-center items-center gap-3 md:gap-6 text-sm">
             <div className="flex gap-1">
               <FaBuilding strokeWidth={1.25} size={16} />
-              <Label className="m-auto">The Matter Lab @ UofT</Label>
+              <Label className="m-auto">Professor Cheung's Lab, McGill University</Label>
             </div>
             <div className="flex gap-1">
               <IoIosSchool strokeWidth={1.25} size={20} />
