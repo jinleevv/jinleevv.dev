@@ -8,8 +8,8 @@ export default function Footer() {
       </div>
 
       <div className="flex items-center gap-4">
-        <a href="mailto:jinwon.lee@mail.mcgill.ca" className="hover:text-black">
-          jinwon.lee@mail.mcgill.ca
+        <a href="mailto:jinwonlee0916@gmail.com" className="hover:text-black">
+          jinwonlee0916@gmail.com
         </a>
         <a
           href="https://github.com/jinleevv"
